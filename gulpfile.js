@@ -52,8 +52,6 @@ gulp.task('serve', function() {
 /////////////////      WATCH BELOW THIS LINE      //////////////////
 gulp.watch(['js/*.js'], ['jsBuild']);
 gulp.watch(['bower.json'], ['bowerBuild']);
-});
-
 
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
   browserSync.reload();
