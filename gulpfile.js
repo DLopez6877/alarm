@@ -52,6 +52,7 @@ gulp.task('serve', function() {
 /////////////////      WATCH BELOW THIS LINE      //////////////////
 gulp.watch(['js/*.js'], ['jsBuild']);
 gulp.watch(['bower.json'], ['bowerBuild']);
+gulp.watch(['*.html'], ['htmlBuild']);
 
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
   browserSync.reload();
@@ -61,6 +62,9 @@ gulp.task('bowerBuild', ['bower'], function(){
   browserSync.reload();
 });
 
+gulp.task('htmlBuild', function() {
+  browserSync.reload();
+});
 /////////////////      PIPELINE BELOW THIS LINE      //////////////////
 gulp.task('jsBrowserify', ['concatInterface'], function() {
   return browserify({ entries: ['./tmp/allConcat.js'] })

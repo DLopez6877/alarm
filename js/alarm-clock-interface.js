@@ -37,18 +37,3 @@ $(document).ready(function() {
 // output.forEach(function(element) {
 //   $('#solution').append("<li>" + element + "</li>");
 // });
-
-$(document).ready(function(){
-  $('#signup').submit(function(event){
-    event.preventDefault();
-    var email = $('#email').val();
-    $('#signup').hide();
-    $('#solution').prepend('<p>Thank you, ' + email + ' has been added to our list!</p>');
-  });
-});
-
-$(document).ready(function(){
-  setInterval(function() {
-    $('#time').text(moment().format('LTS'));
-  }, 1000);
-});
